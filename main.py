@@ -24,7 +24,7 @@ def first_template():
     adjective_3 = input("Input adjective again (feeling): ")
     silly_word = input("Input a silly word: ")
 
-    first_text = f'''
+    return f'''
     It was about {number} {measure_of_time} ago when I arrived at the hospital in a {mode_of_transportation}. 
     The hospital is a/an {adjective} place, there are a lot of {adjective_2} {noun} here. 
     There are nurses here who have {color} {part_of_body}. If someone wants to come into my room I told them 
@@ -32,9 +32,6 @@ def first_template():
     they were wearing a {noun_3} on their {part_of_body_2}. I heard that all doctors {verb} {noun_4} every day for 
     breakfast. The most {adjective_3} thing about being in the hospital is the {silly_word} {noun} ! 
          '''
-
-    return first_text
-
 
 
 def second_template():
@@ -53,7 +50,7 @@ def second_template():
     silly_word = input("Input silly word: ")
     noun_2 = input("Input noun again: ")
 
-    second_text = f'''
+    return f'''
     This weekend I am going camping with {person_name}. I packed my lantern, sleeping bag,
     and {noun}. I am so {adjective} to {verb} in a tent. I am {adjective_2} we might see a(n)
     {animal}, I hear they’re kind of dangerous. While we’re camping, we are going to hike, fish, and {verb_2}. I
@@ -61,8 +58,6 @@ def second_template():
     through the forest for {number} {measure_of_time}. If I see a {color} {animal} while hiking, I am going to bring
     it home as a pet! At night we will tell {number} {silly_word} stories and roast {noun_2} around the campfire!!
           '''
-
-    return  second_text
 
 
 def third_template():
@@ -88,7 +83,7 @@ def third_template():
     adjective_5 = input("Input adjective again (feeling): ")
     noun_5 = input("Input noun again (plural): ")
 
-    third_text = f'''
+    return f'''
     Dear {person_name}, I am writing to you from a {adjective} castle in an enchanted forest. I
     found myself here one day after going for a ride on a {color} {animal} in {place}. There are {adjective_2}
     {magical_creature} and {adjective_3} {magical_creature_2} here! In the {room_in_a_house} there is a pool full
@@ -97,23 +92,21 @@ def third_template():
     only way to get here now is {verb} on a {adjective_5} {noun_5}!!
          '''
 
-    return  third_text
+
+def choices(choice):
+    if choice == '1':
+        print(first_template())
+    elif choice == '2':
+        print(second_template())
+    elif choice == '3':
+        print(third_template())
+
+templates = [first_template, second_template, third_template]
 
 
-if choice == '1':
-    print(first_template())
-elif choice == '2':
-    print(second_template())
-elif choice == '3':
-    print(third_template())
-else:
-    random.choice(first_template(), second_template(), third_template())
+choices(choice)
 
-
-
-
-
-
-
-
-
+if choice == "r":
+    a_lst = ['1','2','3']
+    a = random.choice(a_lst)
+    choices(a)
